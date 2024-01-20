@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MapPage from './pages/MapPage';
+import MapComponent from './components/Map';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
