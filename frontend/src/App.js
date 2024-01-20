@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import Map from './components/Map';
 import './App.css';
 
 function App() {
