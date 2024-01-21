@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -6,19 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import MapPage from './pages/MapPage';
 import BackendPage from './pages/BackendPage';
 import MapComponent from './components/Map';
+import { CartProvider } from './components/CartContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const CartContext = createContext();
+
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <MapPage /> */}
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MapPage />} />
         <Route path="/backend" element={<BackendPage />} />
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );
 

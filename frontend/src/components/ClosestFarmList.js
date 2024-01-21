@@ -31,6 +31,17 @@ export const ClosestFarmList = ({latitude, longitude, topN}) => {
     </ul>
   );
 };
+
+export const closestFarms = async ({latitude, longitude, topN}) => {
+  const snapshot = await getDocs(collection(firestore, 'farms'));
+  const farmsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  const farmsWithDistance = farmsData.map(farm => ({
+    ...farm,
+    distance: calculateDistance(latitude, longitude, farm.coordinates[0], farm.coordinates[1])
+  }));
+  const sortedFarms = farmsWithDistance.sort((a, b) => a.distance - b.distance);
+  return sortedFarms.slice(0, topN);
+};
   
 // Function to calculate distance between two points
 function calculateDistance(lat1, lon1, lat2, lon2) {
