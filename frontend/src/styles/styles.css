@@ -39,6 +39,10 @@ section {
   }
 }
 
+.container {
+  overflow-y: auto;
+}
+
 .section-text {
   min-width: 300px;
 }

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MapPage from './pages/MapPage';
 import BackendPage from './pages/BackendPage';
+import LandingPage from './pages/LandingPage'
 import MapComponent from './components/Map';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -15,8 +16,9 @@ root.render(
     {/* <MapPage /> */}
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MapPage />} />
+        <Route exact path="/" element={<MapPage />} />
         <Route path="/backend" element={<BackendPage />} />
+        <Route path="/landing" element={<App /> } />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
