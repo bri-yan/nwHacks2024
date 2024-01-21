@@ -6,40 +6,29 @@ function Features() {
             <div class="container">
                 <div class="row">
                     <div className="section-text">
-                        <div className="section-text__title">Features</div>
+                        <div className="section-text__title-centered">Features</div>
 
                         <div className="row">
                             <div className="feature-box col-50">
                                 <div className="section-text__title-small">Interactive Map</div>
                                 <div className="section-text__desc">
-                                    Provide Description. Also want to put an image/preview to the left.
-                                </div>
-                            </div>
-
-                            <div className="feature-box col-50">
-                                <div className="section-text__title-small">
-                                    In-Season Suggestions
-                                </div>
-                                <div className="section-text__desc">
-                                    Provide Description.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="feature-box col-50">
-                                <div className="section-text__title-small">
-                                    AI Suggest/Generated Recipes?
-                                </div>
-                                <div className="section-text__desc">
-                                    We still doing this? Maximizes the use of your ingredients to ensure all your ingredients are fresh while they're fresh.
+                                    Use our interactive map to easily find and shop from the local farms from the comfort of your own home. See the exact route for your delivery.
                                 </div>
                             </div>
 
                             <div className="feature-box col-50">
                                 <div className="section-text__title-small">Locally Sourced Produce</div>
                                 <div className="section-text__desc">
-                                    Provide Description.
+                                    Quickly see all the farms near you with the map and select the farm of your choice to see their food products.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="feature-box col-50">
+                                <div className="section-text__title-small">In-Season Suggestions</div>
+                                <div className="section-text__desc">
+                                    We'll prioritize each farm's selection of in-season food items to add to your delivery.
                                 </div>
                             </div>
                         </div>

@@ -130,6 +130,14 @@ section {
 .feature-box {
   margin-bottom: 32px;
   align-items: center;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  border-radius: 20px;
+}
+.feature-box:hover {
+  background-color: #f5eacf;
+  
 }
 
 .impact-box {
@@ -193,6 +201,25 @@ section {
 }
 .signup-btn:hover {
   background-color: #4f583d;
+}
+
+.map-btn {
+  background-color: #8fa6ac;
+  /* border: 2px solid #4f583d; */
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  margin: 0;
+}
+.map-btn:hover {
+  background-color: #5f767c;
 }
 
 .text-white {
