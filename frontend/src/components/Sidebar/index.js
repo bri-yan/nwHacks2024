@@ -100,14 +100,14 @@ const SidebarComponent = (props) => {
         </div>
         <div className="bar-3">
           <div className="cards">
-            <CardComponent percent={10} units={3} item={'Apple'}/>
-            <CardComponent percent={30} units={4} item={'Orange'}/>
-            <CardComponent percent={40} units={5} item={'Banana'}/>
-            <CardComponent percent={30} units={4} item={'Orange'}/>
-            <CardComponent percent={40} units={5} item={'Banana'}/>
-            <CardComponent percent={40} units={5} item={'Banana'}/>
-            <CardComponent percent={30} units={4} item={'Orange'}/>
-            <CardComponent percent={40} units={5} item={'Banana'}/>
+            <CardComponent item={'Apple'}/>
+            <CardComponent item={'Orange'}/>
+            <CardComponent item={'Banana'}/>
+            <CardComponent item={'Orange'}/>
+            <CardComponent item={'Banana'}/>
+            <CardComponent item={'Banana'}/>
+            <CardComponent item={'Orange'}/>
+            <CardComponent item={'Banana'}/>
           </div>
           <div className="side-button" onClick={confirmDonation}>Confirm Order</div>
         </div>
