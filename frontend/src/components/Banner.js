@@ -13,7 +13,7 @@ function Banner() {
                     <div className="section-text__body">
                         Buying local has never been easier! Welcome to Homegrown, your gateway to fresh, locally sourced groceries delivered to your doorstep every week. Our goal is to foster and promote sustainable practice. Join us as we connect you with the finest produce from nearby farms, ensuring a weekly delivery of sustainably sourced goodness. Support local agriculture and simplify your grocery experience with us.
                     </div>
-                    <a href="#Signup" className="signup-btn">     {/*might just change this to map button*/}
+                    <a href="/backend" className="signup-btn">     {/*might just change this to map button*/}
                         Sign up
                     </a>
                 </div>

@@ -14,7 +14,7 @@ function Services() {
               <div className="section-text__desc">
                 Quickly get started with our effortless sign up process and fill out the information form so we can immediately start finding farms near you. 
               </div>
-              <a href="#Signup" className="signup-btn">     {/*make this button do something*/}
+              <a href="/backend" className="signup-btn">     {/*make this button do something*/}
                 Sign up
               </a>
             </div>
@@ -38,6 +38,7 @@ function Services() {
               <div className="section-text__desc">
                 Receive convenient deliveries right at your front door.
               </div>
+              <img width="70" height="70" src="https://img.icons8.com/fluency/48/grocery-bag.png" alt="grocery-bag"/>
             </div>
           </div>
 
@@ -47,6 +48,7 @@ function Services() {
               <div className="section-text__desc">
                 Enjoy Your Fresh, Enviromentally Mindful Food Delivery.
               </div>
+              <img width="70" height="70" src="https://img.icons8.com/bubbles/50/meal.png" alt="meal"/>
             </div>
           </div>
         </div>

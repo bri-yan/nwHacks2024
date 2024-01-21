@@ -7,7 +7,6 @@ function Features() {
                 <div class="row">
                     <div className="section-text">
                         <div className="section-text__title-centered">Features</div>
-
                         <div className="row">
                             <div className="feature-box col-50">
                                 <div className="section-text__title-small">Interactive Map</div>
@@ -31,6 +30,10 @@ function Features() {
                                     We'll prioritize each farm's selection of in-season food items to add to your delivery.
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="section-image">
+                            <img src="./images/farm-preview.webp" alt="Map" />
                         </div>
                     </div>
                 </div>

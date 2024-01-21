@@ -5,6 +5,8 @@ import NewUserPopup from '../components/UserPopups/NewUserPopup'; // Import the 
 import EditUserPopup from '../components/UserPopups/EditUserPopup'; 
 import ClosestFarmList from '../components/ClosestFarmList';
 
+import "../styles/styles.css";
+
 const initialState = {
   current_user: null
 };
@@ -81,6 +83,7 @@ class BackendPage extends React.Component {
     const { isNewUser, current_user, showUserInfo, showClosestFarm, showNewUserPopup, showEditUserPopup } = this.state;
   
     return (
+      <main>
       <div className="backend">
         <img src="https://foodb.ca/system/foods/pictures/395/thumb/395.png" alt="food" />
         
@@ -116,6 +119,7 @@ class BackendPage extends React.Component {
         )}
         <button onClick={this.openEditUserPopup}>Edit User Info</button>
       </div>
+      </main>
     );
   }
   
