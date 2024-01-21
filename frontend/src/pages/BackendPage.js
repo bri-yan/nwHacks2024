@@ -85,24 +85,38 @@ class BackendPage extends React.Component {
     return (
       <main>
       <div className="backend">
+        <div class="container">
         <img src="https://foodb.ca/system/foods/pictures/395/thumb/395.png" alt="food" />
+        </div>
         
+        <div class="container">
         {isNewUser && <NewUserPopup userId={current_user.id} onInfoSubmit={this.handleNewUserInfo} />}
+        </div>
 
+        <div class="container">
         {showNewUserPopup && <NewUserPopup closePopup={this.closeNewUserPopup} />}
         {showEditUserPopup && <EditUserPopup user={current_user} userId={current_user.id} closePopup={this.closeEditUserPopup} onInfoSubmit={this.handleNewUserInfo} />}
+        </div>
 
+        <div class="container">
         {current_user ? <LogoutButton/> : <GoogleBlueButton buttonText="Login with Google"/>}
         {current_user && <div>Welcome, {current_user.displayName}</div>}
+        </div>
 
-        <button onClick={this.toggleUserInfo}>
+        <div class="row">
+        <div class="container">
+        <button onClick={this.toggleUserInfo}  className='map-btn'>
           {showUserInfo ? 'Hide User Info' : 'Show User Info'}
         </button>
+        </div>
 
-        <button onClick={this.toggleClosestFarm}>
+        <div class="container">
+        <button onClick={this.toggleClosestFarm} className='map-btn'>
           {showClosestFarm ? 'Hide Closest Farms' : 'Show Closest Farms'}
         </button>
+        </div>
 
+        <div class="container">
         {showUserInfo && current_user && (
           <div>
             <div>Welcome, {current_user.displayName}</div>
@@ -110,14 +124,22 @@ class BackendPage extends React.Component {
             <div>Is New User: {String(isNewUser)}</div>
           </div>
         )}
+        </div>
 
+        <div class="container">
         {showClosestFarm && current_user && (
           <div>
             <div>Your closest farms are:</div>
             <ClosestFarmList latitude={current_user.latitude} longitude={current_user.longitude} topN={5} />
           </div>
         )}
-        <button onClick={this.openEditUserPopup}>Edit User Info</button>
+        <button onClick={this.openEditUserPopup} className='map-btn'>Edit User Info</button>
+        </div>
+
+        <a href="/" className="map-btn">     {/*make this button do something*/}
+          See our map
+        </a>
+        </div>
       </div>
       </main>
     );
