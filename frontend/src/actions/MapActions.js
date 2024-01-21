@@ -37,7 +37,7 @@ export const loadLocations = async (map, farms) => {
           const barn = await loadModel(options);
           barn.setCoords([barnHouse.long, barnHouse.lat]);
           window.tb.add(barn);
-          console.log("done");
+          console.log("hi");
         } catch (error) {
           console.error("Error loading model:", error);
         }

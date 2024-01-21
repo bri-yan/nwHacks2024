@@ -16,7 +16,7 @@ const MapPage = (props) => {
     setTimeout(() => {
       window.map = map;
       loadLocations(map, locations);
-    }, 2000);
+    }, 3000);
   };
 
   const toggleSideBar = (sideBarState) => {
