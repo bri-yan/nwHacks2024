@@ -3,6 +3,7 @@ import { GoogleBlueButton, LogoutButton } from '../components/GoogleLoginButton'
 import { auth, handleUserProfile } from '../firebase/utils';
 import NewUserPopup from '../components/UserPopups/NewUserPopup'; // Import the new user popup component
 import EditUserPopup from '../components/UserPopups/EditUserPopup'; 
+import ClosestFarmList from '../components/ClosestFarmList';
 
 const initialState = {
   current_user: null
@@ -95,8 +96,8 @@ class BackendPage extends React.Component {
           {showUserInfo ? 'Hide User Info' : 'Show User Info'}
         </button>
 
-        <button onClick={this.toggleUserInfo}>
-          {showClosestFarm ? 'Show Closest Farms' : 'Show Closest Farms'}
+        <button onClick={this.toggleClosestFarm}>
+          {showClosestFarm ? 'Hide Closest Farms' : 'Show Closest Farms'}
         </button>
 
         {showUserInfo && current_user && (
@@ -109,9 +110,8 @@ class BackendPage extends React.Component {
 
         {showClosestFarm && current_user && (
           <div>
-            <div>Welcome, {current_user.displayName}</div>
-            <div>{JSON.stringify(current_user)}</div>
-            <div>Is New User: {String(isNewUser)}</div>
+            <div>Your closest farms are:</div>
+            <ClosestFarmList latitude={current_user.latitude} longitude={current_user.longitude} topN={5} />
           </div>
         )}
         <button onClick={this.openEditUserPopup}>Edit User Info</button>
