@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import GoogleBlueButton from './components/GoogleLoginButton';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+    <a>Login</a>
+    <img src="https://foodb.ca/system/foods/pictures/395/thumb/395.png" alt="food"/>
+    <GoogleBlueButton buttonText="Login with Google"/>
     </div>
   );
 }
