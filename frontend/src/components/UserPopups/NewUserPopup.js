@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { firestore } from '../firebase/utils';
+import { firestore } from '../../firebase/utils';
 import { doc, setDoc} from 'firebase/firestore';
 
 class NewUserPopup extends Component {
@@ -45,14 +45,15 @@ class NewUserPopup extends Component {
 
   render() {
     return (
-      <div className="new-user-popup">
+      <div className="modal-backdrop">
+        <div className='modal'>
         <h2>Welcome New User</h2>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="displayName">Name:</label>
             <input
               type="text"
-              id="displayName"
+              className="displayName"
               name="displayName"
               value={this.state.displayName}
               onChange={this.handleChange}
@@ -63,7 +64,7 @@ class NewUserPopup extends Component {
             <label htmlFor="address">Address:</label>
             <input
               type="text"
-              id="address"
+              className="address"
               name="address"
               value={this.state.address}
               onChange={this.handleChange}
@@ -73,7 +74,7 @@ class NewUserPopup extends Component {
           <div>
             <label htmlFor="dietPreference">Diet Preference:</label>
             <select
-              id="dietPreference"
+              className="dietPreference"
               name="dietPreference"
               value={this.state.dietPreference}
               onChange={this.handleChange}
@@ -88,6 +89,7 @@ class NewUserPopup extends Component {
           </div>
           <button type="submit">Save Profile</button>
         </form>
+      </div>
       </div>
     );
   }

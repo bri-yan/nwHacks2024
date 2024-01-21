@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleBlueButton, LogoutButton } from '../components/GoogleLoginButton';
 import { auth, handleUserProfile } from '../firebase/utils';
-import NewUserPopup from '../components/NewUserPopup'; // Import the new user popup component
+import NewUserPopup from '../components/UserPopups/NewUserPopup'; // Import the new user popup component
+import EditUserPopup from '../components/UserPopups/EditUserPopup'; 
 
 const initialState = {
   current_user: null
@@ -13,7 +14,9 @@ class BackendPage extends React.Component {
       current_user: null,
       isNewUser: false,
       showUserInfo: false,
-      showClosestFarm: false
+      showClosestFarm: false,
+      showNewUserPopup: false,
+    showEditUserPopup: false
     };
     console.log(String(this.state.current_user))
   }
@@ -31,6 +34,8 @@ class BackendPage extends React.Component {
       showClosestFarm: !prevState.showClosestFarm
     }));
   }
+
+  
 
   componentDidMount() {
     console.log("User Authentication mounted")
@@ -51,6 +56,12 @@ class BackendPage extends React.Component {
     });
   }
 
+  openNewUserPopup = () => this.setState({ showNewUserPopup: true });
+  closeNewUserPopup = () => this.setState({ showNewUserPopup: false });
+
+  openEditUserPopup = () => this.setState({ showEditUserPopup: true });
+  closeEditUserPopup = () => this.setState({ showEditUserPopup: false });
+
   componentWillUnmount() {
     this.authListener && this.authListener();
   }
@@ -66,13 +77,17 @@ class BackendPage extends React.Component {
   }
 
   render() {
-    const { isNewUser, current_user, showUserInfo, showClosestFarm } = this.state;
+    const { isNewUser, current_user, showUserInfo, showClosestFarm, showNewUserPopup, showEditUserPopup } = this.state;
   
     return (
       <div className="backend">
         <img src="https://foodb.ca/system/foods/pictures/395/thumb/395.png" alt="food" />
         
         {isNewUser && <NewUserPopup userId={current_user.id} onInfoSubmit={this.handleNewUserInfo} />}
+
+        {showNewUserPopup && <NewUserPopup closePopup={this.closeNewUserPopup} />}
+        {showEditUserPopup && <EditUserPopup user={current_user} userId={current_user.id} closePopup={this.closeEditUserPopup} onInfoSubmit={this.handleNewUserInfo} />}
+
         {current_user ? <LogoutButton/> : <GoogleBlueButton buttonText="Login with Google"/>}
         {current_user && <div>Welcome, {current_user.displayName}</div>}
 
@@ -99,7 +114,7 @@ class BackendPage extends React.Component {
             <div>Is New User: {String(isNewUser)}</div>
           </div>
         )}
-
+        <button onClick={this.openEditUserPopup}>Edit User Info</button>
       </div>
     );
   }
