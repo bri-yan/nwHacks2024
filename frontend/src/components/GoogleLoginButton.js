@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignInWithGoogle } from '../firebase/utils';
+import { SignInWithGoogle, SignOut } from '../firebase/utils';
 
 const GoogleBlueButton = ({ buttonText }) => {
   return (
@@ -9,4 +9,12 @@ const GoogleBlueButton = ({ buttonText }) => {
   );
 }
 
-export default GoogleBlueButton;
+const LogoutButton = () => {
+  return (
+    <button style={{backgroundColor: '#4285F4', color: 'white', border: 'none', padding: '10px 20px'}} onClick={SignOut}>
+      Logout
+    </button>
+  );
+}
+
+export { GoogleBlueButton, LogoutButton };

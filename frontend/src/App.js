@@ -20,9 +20,6 @@ function App() {
           Learn React
         </a>
       </header>
-    <a>Login</a>
-    <img src="https://foodb.ca/system/foods/pictures/395/thumb/395.png" alt="food"/>
-    <GoogleBlueButton buttonText="Login with Google"/>
     </div>
   );
 }
