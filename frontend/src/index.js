@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MapPage from './pages/MapPage';
+import BackendPage from './pages/BackendPage';
+import MapComponent from './components/Map';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    {/* <MapPage /> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MapPage />} />
+        <Route path="/backend" element={<BackendPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
