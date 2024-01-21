@@ -26,7 +26,7 @@ export const loadLocations = async (map, farms) => {
                 var options = {
                     obj: 'barn/scene.gltf',
                     type: 'gltf',
-                    scale: 60,
+                    scale: 80,
                     units: 'meters',
                     anchor: 'center',
                     rotation: { x: 90, y: 90, z: 0 } // default rotation

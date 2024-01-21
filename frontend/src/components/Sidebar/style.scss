@@ -1,3 +1,9 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  user-select: none;
+}
 .slick-arrow {
     z-index: 1000;
   }
@@ -94,6 +100,10 @@
           text-align: center;
           font-weight: 600;
         }
+        h2{
+          text-align: center;
+          font-weight: 100;
+        }
         p {
           text-align: center;
         }
@@ -122,6 +132,10 @@
         margin-bottom: 2vh;
         padding: 10px;
         flex-basis: calc(33.33%-20px);
+
+        &after {
+          margin-right: 10vw;
+        }
       }
 
       .card{
@@ -154,7 +168,7 @@
         &:after {
           position: absolute;
           z-index: -1 !important;
-          top: 0;
+          top: 10;
           left: 0;
           width: 100%;
           height: 100%;
