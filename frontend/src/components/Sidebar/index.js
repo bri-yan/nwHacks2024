@@ -39,6 +39,7 @@ const SidebarComponent = (props) => {
       setShelterName(name); 
       setIndex(to);
       props.toggleCoords([props.shelters[name].long, props.shelters[name].lat]);
+      props.toggleUpdateMap();
       window.map.flyTo({
         center: [
           props.shelters[name].long,

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -16,6 +16,7 @@ const MapComponent = (props) => {
         height: '100vh',
         width: '100%',
         marginLeft: leftMargin,
+        marginBottom: props.updateMap,
         transition: '0.5s ease-in-out',
       }}
       center={props.coords}

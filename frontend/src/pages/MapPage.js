@@ -8,12 +8,12 @@ import { getDocs, collection } from 'firebase/firestore'; // Import getDocs from
 
 const MapPage = (props) => {
   const mockFarms = {
-    'UBC Farm Market': {long: -123.23799, lat: 49.25105, address: '1234 Main St.'},
+    'UBC Farm Market': {long: -123.23799, lat: 49.25125, address: '1234 Main St.'},
     'Pacific Spirit Farm' : {long: -123.176588, lat: 49.224863, address: '2345 Main St.'},
   }
   
   const [sideBarVis, setSideBar] = useState(true);
-  const [coords, setCoords] = useState([-123.23799, 49.25105]);
+  let [coords, setCoords] = useState([-123.23799, 49.25105]);
   const [farms, setFarms] = useState([]); // State to store the fetched farms
 
   useEffect(() => {
@@ -41,6 +41,7 @@ const MapPage = (props) => {
     fetchFarms();
   }, [coords]);
   let locations = farms;
+  const [updateMap, setUpdateMap] = useState(true);
 
   const mapLoad = map => {
     setTimeout(() => {
@@ -55,6 +56,10 @@ const MapPage = (props) => {
 
   const toggleCoords = (coordinates) => {
     setCoords(coordinates);
+  }
+
+  const toggleUpdateMap = () => {
+    setUpdateMap(!updateMap);
   }
 
   const mockData = [
@@ -74,7 +79,12 @@ const MapPage = (props) => {
     'donation-shelter',
     details.address
   ]);
-  console.log(rankings);
+  
+  let [mapCoords, setMapCoords] = useState([49.253467683431005, -123.25045471982578]);
+
+  console.log(farms);
+  // console.log(rankings);
+  // console.log(farms[rankings[0][0]].long);
   
   // const mockFarms = {
   //   'UBC Farm Market': {long: -123.23595, lat: 49.249605, address: '1234 Main St.'},
@@ -84,10 +94,8 @@ const MapPage = (props) => {
   const mockRanking2 = ['donation-shelter'];
   return (
     <div className="mapbox">
-      <MapComponent coords={coords} mapLoad={mapLoad} sideBarVis={sideBarVis} mapClick={() => {}} />
-      {/* <SidebarComponent toggleCoords={toggleCoords} shelters={mockFarms} ranking={mockRanking} toggleSideBar={toggleSideBar} sideBarVis={sideBarVis}/> */}
-      <SidebarComponent toggleCoords={toggleCoords} shelters={farms} ranking={rankings} toggleSideBar={toggleSideBar} sideBarVis={sideBarVis}/>
-
+      <MapComponent updateMap={updateMap} coords={coords} mapLoad={mapLoad} sideBarVis={sideBarVis} mapClick={() => {}} />
+      <SidebarComponent toggleUpdateMap={toggleUpdateMap} toggleCoords={toggleCoords} shelters={farms} ranking={rankings} toggleSideBar={toggleSideBar} sideBarVis={sideBarVis}/>
       
     </div>
   );
