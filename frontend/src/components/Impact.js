@@ -51,7 +51,7 @@ function Impact() {
                                 The long distance of food transportation further has an effect on levels of food waste. One contribution is the food expiring as a result of possible failures in the cooling systems during long transportation. There is also an indirect cause. The constant availability of foods (often transported from all over the world) leads to a sense of abundance, leading to lower attention to timely consumption. However, this does not need to be the case as Homegrown is able to provide that same abundance from local suppliers.
                             </div>
                             <div className="impact-text__desc">
-                                Our goal is to minimize, if not entirely eliminate, the adverse environmental impacts associated with global food transportation.
+                                Our goal is to minimize the adverse environmental impacts associated with global food transportation through our community-driven food delivery service, Homegrown.
                             </div>
                     </div>
                 </div>
